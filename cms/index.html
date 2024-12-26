@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meniu Responsiv</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        #menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            #menu {
+                display: block !important;
+            }
+            #menu-toggle {
+                display: none;
+            }
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Titlu Pagina</h1>
+        <button id="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-icon">&#9776;</span>
+            <span class="close-icon" style="display: none;">&times;</span>
+        </button>
+        <nav id="menu" class="hidden">
+            <ul>
+                <li><a href="restaurante/index.php">Adauga restaurant</a></li>
+                <li><a href="meniuri/add_product.php">Despre</a></li>
+                <li><a href="recenzi/index.php">Servicii</a></li>
+                <li><a href="livratori/index.php">livratori</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <p>Aici este un text de exemplu care poate fi afișat sub bara de navigare. Poți adăuga orice conținut dorești în această secțiune.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            const closeIcon = document.querySelector('.close-icon');
+
+            menuToggle.addEventListener('click', function() {
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    menuIcon.style.display = 'none';
+                    closeIcon.style.display = 'inline';
+                } else {
+                    menu.classList.add('hidden');
+                    menuIcon.style.display = 'inline';
+                    closeIcon.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

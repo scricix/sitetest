@@ -1,0 +1,322 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+button[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background: #45a049;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.offer-info {
+    background: #fff3f3;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.offer-badge {
+    background: #ff4444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.offer-price {
+    color: #ff4444;
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.original-price {
+    color: #666;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.edit { background-color: #4CAF50; }
+.delete { background-color: #f44336; }
+.available { background-color: #2196F3; }
+.unavailable { background-color: #607D8B; }
+.offer-active { background-color: #ff4444; }
+.offer-inactive { background-color: #666; }
+
+h2 {
+    color: #333;
+    margin: 30px 0 20px;
+}
+
+
+/* Stilurile existente rămân la fel, adăugăm la final: */
+
+/* Layout Grid pentru produse */
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Media Queries pentru diferite dimensiuni de ecran */
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .products-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .products-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-group label {
+        font-size: 14px;
+    }
+    
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-card img {
+        height: 150px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Îmbunătățiri pentru formulare pe mobile */
+@media screen and (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+    
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .offer-info {
+        padding: 8px;
+    }
+    
+    .offer-price {
+        font-size: 1em;
+    }
+}
+
+
+/* Stiluri pentru secțiunea de recenzii */
+.reviews-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.rating-summary {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.average-rating {
+    font-size: 24px;
+}
+
+.stars {
+    color: #ffd700;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #ddd;
+    font-size: 24px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.star-rating input:checked ~ label {
+    color: #ffd700;
+}
+
+.review-card {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.reviewer-name {
+    font-weight: bold;
+}
+
+.review-date {
+    color: #666;
+}
+
+.rating {
+    color: #ffd700;
+    margin: 5px 0;
+}
+
+.review-text {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* Responsive design pentru recenzii */
+@media screen and (max-width: 768px) {
+    .review-header {
+        flex-direction: column;
+    }
+    
+    .star-rating label {
+        font-size: 20px;
+    }
+}
+
+
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.back-arrow:hover {
+    transform: scale(1.1);
+}
+
+.back-arrow svg {
+    fill: #333;
+}
